@@ -1,0 +1,46 @@
+{
+  "name": "creeper",
+  "version": "0.1.0",
+  "description": "creeper spider engine",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "BABEL_ENV=babel ../../node_modules/.bin/babel src -d lib",
+    "test": "BABEL_ENV=ava ../../node_modules/.bin/nyc ../../node_modules/.bin/ava --verbose --timeout=10s",
+    "test-no-cov": "BABEL_ENV=ava ../../node_modules/.bin/ava --verbose --timeout=10s",
+    "prepublish": "npm run build",
+    "report-cov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/creeper.git"
+  },
+  "keywords": [
+    "creeper"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": {
+      "extends": "../../../.babelrc"
+    },
+    "files": [
+      "test/*.js"
+    ]
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/creeper/issues"
+  },
+  "devDependencies": {
+    "creeper-loader-qq": "^5.2.2"
+  },
+  "dependencies": {
+  }
+}

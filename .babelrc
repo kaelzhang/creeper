@@ -1,0 +1,32 @@
+{
+  "parserOpts": {
+    // Allow returns in the module
+    "allowReturnOutsideFunction": true
+  },
+
+  "env": {
+    "ava": {
+      "sourceMaps": "inline",
+      "plugins": [
+        "transform-flow-strip-types",
+        "transform-es2015-modules-commonjs",
+        "transform-class-properties"
+      ]
+    },
+
+    "babel": {
+      "plugins": [
+        "transform-flow-strip-types",
+        "transform-es2015-modules-commonjs",
+        "transform-class-properties"
+      ]
+    },
+
+    "rollup": {
+      "plugins": [
+        "transform-flow-strip-types",
+        "transform-class-properties"
+      ]
+    }
+  }
+}
